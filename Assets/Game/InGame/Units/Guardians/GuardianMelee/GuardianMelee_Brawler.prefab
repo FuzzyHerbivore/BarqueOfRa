@@ -61,6 +61,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -82,9 +84,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2369392422807907553
 GameObject:
@@ -136,10 +140,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2369392422807907553}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -329,6 +333,7 @@ MonoBehaviour:
   attackDamage: 13
   attackCooldown: 1.8
   attackRange: 8.5
+  RangeRadiusUI: {fileID: 0}
   detectionRange: 15
   combatTargetsMask:
     serializedVersion: 2
@@ -379,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateID: 0
+  dealDamageEffectBundle: {fileID: 0}
 --- !u!1001 &1480359185462391013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -440,11 +446,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31c2f15e6459fbd41bf336dc34165133, type: 3}
---- !u!1 &6485199139776945339 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5659692759392070750, guid: 31c2f15e6459fbd41bf336dc34165133, type: 3}
-  m_PrefabInstance: {fileID: 1480359185462391013}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7628973427571664745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9031058916677867404, guid: 31c2f15e6459fbd41bf336dc34165133, type: 3}
@@ -536,11 +537,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3691574588328059126, guid: 4f40a10157874b34b87d2f456e403a75, type: 3}
   m_PrefabInstance: {fileID: 7600576956529461248}
   m_PrefabAsset: {fileID: 0}
---- !u!2083052967 &7289893683187284177 stripped
-VisualEffect:
-  m_CorrespondingSourceObject: {fileID: 887292511256096977, guid: 4f40a10157874b34b87d2f456e403a75, type: 3}
-  m_PrefabInstance: {fileID: 7600576956529461248}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7793067394831542068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -621,9 +617,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b77962033af8d2d4bb032ba649e25f83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8358410227716506052}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b77962033af8d2d4bb032ba649e25f83, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 867274543589817033}
   m_SourcePrefab: {fileID: 100100000, guid: b77962033af8d2d4bb032ba649e25f83, type: 3}
 --- !u!4 &6453397607776984386 stripped
 Transform:
@@ -657,26 +650,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &867274543589817033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6982796383469296229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4d9f19bfed456b419aef7a979f58a17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VFX_SwordImpact: {fileID: 7289893683187284177}
-  VFX_Slash: {fileID: 0}
-  VFX_Arrow: {fileID: 0}
-  VFX_ElectricAttack: {fileID: 0}
-  VFX_MagicImpact: {fileID: 0}
-  VFX_MagicTrails: {fileID: 0}
-  VFX_Death: {fileID: 6485199139776945339}
-  VFX_MultipleClawAttack: {fileID: 0}
 --- !u!4 &7758630120920809695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b77962033af8d2d4bb032ba649e25f83, type: 3}

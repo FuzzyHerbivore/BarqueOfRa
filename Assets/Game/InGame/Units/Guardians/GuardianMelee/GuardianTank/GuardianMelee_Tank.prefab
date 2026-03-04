@@ -51,10 +51,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2369392422807907553}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -244,6 +244,7 @@ MonoBehaviour:
   attackDamage: 7
   attackCooldown: 1.6
   attackRange: 4.5
+  RangeRadiusUI: {fileID: 0}
   detectionRange: 15
   combatTargetsMask:
     serializedVersion: 2
@@ -294,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateID: 0
+  dealDamageEffectBundle: {fileID: 0}
 --- !u!1001 &2221697800740507742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -584,9 +586,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e54e52576000a94390480d10c4f8859, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8264420604813355754}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e54e52576000a94390480d10c4f8859, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 999925433857795839}
   m_SourcePrefab: {fileID: 100100000, guid: 2e54e52576000a94390480d10c4f8859, type: 3}
 --- !u!1 &1302780202516655375 stripped
 GameObject:
@@ -615,25 +614,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &999925433857795839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302780202516655375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4d9f19bfed456b419aef7a979f58a17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VFX_SwordImpact: {fileID: 5017470005467215563}
-  VFX_Slash: {fileID: 0}
-  VFX_LightningBlitz: {fileID: 0}
-  VFX_LightningImpact: {fileID: 0}
-  VFX_BirdAttack: {fileID: 0}
-  VFX_Death: {fileID: 3456146606701079400}
-  VFX_MultipleClawAttack: {fileID: 0}
 --- !u!4 &1828381311297583029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e54e52576000a94390480d10c4f8859, type: 3}
@@ -782,11 +762,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f40a10157874b34b87d2f456e403a75, type: 3}
---- !u!2083052967 &5017470005467215563 stripped
-VisualEffect:
-  m_CorrespondingSourceObject: {fileID: 887292511256096977, guid: 4f40a10157874b34b87d2f456e403a75, type: 3}
-  m_PrefabInstance: {fileID: 5328296795108034074}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8848150719273068268 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3691574588328059126, guid: 4f40a10157874b34b87d2f456e403a75, type: 3}
@@ -856,10 +831,5 @@ PrefabInstance:
 --- !u!4 &2029209935954940090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9031058916677867404, guid: 31c2f15e6459fbd41bf336dc34165133, type: 3}
-  m_PrefabInstance: {fileID: 7025043204726376246}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3456146606701079400 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5659692759392070750, guid: 31c2f15e6459fbd41bf336dc34165133, type: 3}
   m_PrefabInstance: {fileID: 7025043204726376246}
   m_PrefabAsset: {fileID: 0}
